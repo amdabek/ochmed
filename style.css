@@ -183,18 +183,42 @@ html {
 
 @media screen and (max-width: 768px) {
   .main__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
     width: 100%;
+    padding: 20px;
   }
+
   #main__img {
-    display: none;
+    display: none; /* Ukrywa obraz na mniejszych ekranach */
   }
 
   .main__content {
-    margin-left: 5rem;
+    max-width: 600px;
+    margin: 0 auto;
   }
+
   .main__content h1 {
     font-size: 2.5rem;
+    margin-bottom: 20px;
+  }
+
+  .main__content p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+
+  .main__content ul {
+    list-style-type: none; /* Usuwa punktory */
+    padding: 0;
+    margin: 0;
+  }
+
+  .main__content ul li {
+    font-size: 1.2rem;
+    margin-bottom: 10px; /* Dodaje odstępy między elementami listy */
   }
 }
 
