@@ -192,7 +192,7 @@ html {
   }
 
   #main__img {
-    display: none; /* Ukrywa obraz na mniejszych ekranach */
+    display: none;
   }
 
   .main__content {
@@ -394,7 +394,13 @@ input[type="submit"]:hover {
   .footer {
     padding: 10px;
   }
-}
+
+  .video-container video {
+    box-shadow: none;
+    width: 100%;
+    
+
+  }
 
 /* .image-personel {
   max-width: 800px; 
