@@ -1,10 +1,21 @@
+/* General Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Noto Serif", serif;
 }
-/* PASEK U GÓRY */
+
+/* Body and HTML for Sticky Footer */
+body,
+html {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+
+/* Navbar */
 .navbar {
   background: #f7efe5;
   height: 80px;
@@ -20,6 +31,7 @@
 .navbar__container {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   height: 80px;
   z-index: 1;
   width: 100%;
@@ -27,11 +39,6 @@
   margin: 0 auto;
   padding: 0 50px;
 }
-/* 
-#navbar__logo {
-  display: flex;
-  align-items: center;
-} */
 
 .logo-image {
   width: 170px;
@@ -39,10 +46,7 @@
   border-radius: 8px;
 }
 
-.fa-gem {
-  margin-right: 0.5rem;
-}
-
+/* Menu Items */
 .navbar__menu {
   display: flex;
   align-items: center;
@@ -97,35 +101,79 @@
   transition: all 0.3s ease;
 }
 
-/* STRONA GŁÓWNA */
+/* Mobile Menu Toggle */
+.menu-toggle {
+  display: none;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #674188;
+}
 
+@media screen and (max-width: 768px) {
+  .navbar__container {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .navbar__menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    padding-bottom: 20px;
+    /* Adds space below the toggle button */
+  }
+
+  .navbar__menu.show {
+    display: flex;
+    background-color: #f7efe5;
+    border-radius: 8px;
+    /* Adds padding inside the menu for better visibility */
+    margin-top: 5px; /* Pushes the menu down so it's fully visible */
+    position: absolute;
+    top: 80px; /* Adjusts position to be just below the navbar */
+    right: 10px;
+    width: 80%; /* Keeps some padding on both sides */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .menu-toggle {
+    display: block;
+    margin-left: auto;
+  }
+}
+
+/* Main Content */
 .main {
   background-color: #e2bfd9;
+  flex: 1;
 }
 
 .main__container {
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
-  justify-self: center;
   margin: 0 auto;
-  height: 100vh;
   background-color: #e2bfd9;
   z-index: 1;
   width: 100%;
   max-width: 1300px;
+  padding-bottom: 10px;
 }
 
 .main__content h1 {
   font-size: 4rem;
   color: #674188;
   line-height: 1;
+  margin-left: 20px;
 }
 
 .main__content p {
   margin-top: 1rem;
   font-size: 1.2rem;
   color: #674188;
+  margin-left: 20px;
 }
 
 .main__content ul {
@@ -133,14 +181,30 @@
   margin-left: 20px;
 }
 
-/* PODSTRONY */
+@media screen and (max-width: 768px) {
+  .main__container {
+    text-align: center;
+    width: 100%;
+  }
+  #main__img {
+    display: none;
+  }
+
+  .main__content {
+    margin-left: 5rem;
+  }
+  .main__content h1 {
+    font-size: 2.5rem;
+  }
+}
+
+/* Subpages */
 #fioletowy,
 #pers {
   background-color: #e2bfd9;
 }
 
-/* UMÓW SIĘ */
-
+/* Contact & Appointment Forms */
 .form-intro,
 .kontakt-intro,
 .personel-intro,
@@ -162,11 +226,10 @@
   font-size: 1.2rem;
 }
 
-/* Formularz */
-
+/* Forms */
 form {
   background-color: #f7efe5;
-  max-width: 600px;
+  width: 30%;
   margin: 20px auto;
   padding: 20px;
   border-radius: 8px;
@@ -186,37 +249,25 @@ label {
 
 input[type="text"],
 input[type="email"],
-input[type="number"] {
+input[type="number"],
+select,
+textarea {
   width: 100%;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 1rem;
-  box-sizing: border-box;
   color: #674188;
+  box-sizing: border-box;
 }
 
-input::placeholder {
+textarea {
+  height: 100px;
+}
+
+input::placeholder,
+textarea::placeholder {
   color: #c8a1e0;
-}
-
-select {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 1rem;
-  color: #674188;
-  background-color: #fff;
-  box-sizing: border-box;
-  cursor: pointer;
-}
-
-textarea:focus,
-select:focus,
-input:focus {
-  outline: none;
-  border-color: #674188;
 }
 
 input[type="submit"] {
@@ -236,25 +287,13 @@ input[type="submit"]:hover {
   transition: all 0.3s ease;
 }
 
-textarea {
-  width: 100%;
-  height: 100px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 1rem;
-  box-sizing: border-box;
-  color: #674188;
-  background-color: #f7efe5;
+@media screen and (max-width: 768px) {
+  form {
+    width: 80%;
+  }
 }
 
-textarea::placeholder {
-  color: #c8a1e0;
-}
-
-/* personel */
-
-/* Sekcja zdjęć */
+/* Personnel Section */
 #pers {
   display: flex;
   flex-direction: column;
@@ -272,12 +311,6 @@ textarea::placeholder {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-/* zdjecia */
-.image-section {
-  display: flex;
-  flex-direction: column;
-}
-
 .image-container {
   display: flex;
   align-items: top;
@@ -293,28 +326,24 @@ textarea::placeholder {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-.text__container {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.text__container h4 {
-  margin: 0;
-  color: #674188;
-  font-size: 1.2rem;
-  text-align: left;
-}
-
+.text__container h4,
 .description {
-  font-size: 1rem;
   color: #674188;
-  max-width: 300px;
-  text-align: left;
 }
 
-/* filmik */
+@media screen and (max-width: 768px) {
+  .image-container {
+    flex-direction: column;
+    align-items: center;
+  }
 
+  .image {
+    width: 80%;
+    max-width: 250px;
+  }
+}
+
+/* Video */
 .video-container {
   display: flex;
   justify-content: center;
@@ -327,13 +356,20 @@ textarea::placeholder {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Stopka */
+/* Sticky Footer */
 .footer {
   background-color: #674188;
   text-align: center;
   padding: 15px 0;
   color: #fff;
   width: 100%;
+  margin-top: auto;
+}
+
+@media screen and (max-width: 768px) {
+  .footer {
+    padding: 10px;
+  }
 }
 
 /* .image-personel {
