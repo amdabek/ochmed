@@ -134,8 +134,9 @@ html {
     position: absolute;
     top: 80px; /* Adjusts position to be just below the navbar */
     right: 10px;
-    width: 80%; /* Keeps some padding on both sides */
+    width: 300px; /* Keeps some padding on both sides */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding-bottom: 20px;
   }
 
   .menu-toggle {
@@ -314,6 +315,12 @@ input[type="submit"]:hover {
 @media screen and (max-width: 768px) {
   form {
     width: 80%;
+  }
+  .form-intro {
+    width: 80%;
+  }
+  .navbar__menu {
+    padding-top: 20px;
   }
 }
 
