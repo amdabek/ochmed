@@ -121,7 +121,7 @@ html {
     display: none;
     flex-direction: column;
     width: 100%;
-    padding-bottom: 20px;
+
     /* Adds space below the toggle button */
   }
 
@@ -193,7 +193,7 @@ html {
   }
 
   #main__img {
-    display: none;
+    display: none; /* Ukrywa obraz na mniejszych ekranach */
   }
 
   .main__content {
@@ -213,8 +213,6 @@ html {
 
   .main__content ul {
     list-style-type: none; /* Usuwa punktory */
-    padding: 0;
-    margin: 0;
   }
 
   .main__content ul li {
@@ -254,7 +252,7 @@ html {
 /* Forms */
 form {
   background-color: #f7efe5;
-  width: 30%;
+  width: 40%;
   margin: 20px auto;
   padding: 20px;
   border-radius: 8px;
@@ -378,8 +376,6 @@ input[type="submit"]:hover {
 .video-container {
   display: flex;
   justify-content: center;
-  margin-top: 40px;
-  padding-bottom: 20px;
 }
 
 .video-container video {
