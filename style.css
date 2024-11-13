@@ -1,4 +1,3 @@
-/* General Reset */
 * {
   margin: 0;
   padding: 0;
@@ -6,7 +5,6 @@
   font-family: "Noto Serif", serif;
 }
 
-/* Body and HTML for Sticky Footer */
 body,
 html {
   display: flex;
@@ -15,7 +13,6 @@ html {
   margin: 0;
 }
 
-/* Navbar */
 .navbar {
   background: #f7efe5;
   height: 80px;
@@ -46,7 +43,6 @@ html {
   border-radius: 8px;
 }
 
-/* Menu Items */
 .navbar__menu {
   display: flex;
   align-items: center;
@@ -101,7 +97,6 @@ html {
   transition: all 0.3s ease;
 }
 
-/* Mobile Menu Toggle */
 .menu-toggle {
   display: none;
   font-size: 1.5rem;
@@ -121,20 +116,17 @@ html {
     display: none;
     flex-direction: column;
     width: 100%;
-
-    /* Adds space below the toggle button */
   }
 
   .navbar__menu.show {
     display: flex;
     background-color: #f7efe5;
     border-radius: 8px;
-    /* Adds padding inside the menu for better visibility */
-    margin-top: 5px; /* Pushes the menu down so it's fully visible */
+    margin-top: 5px;
     position: absolute;
-    top: 80px; /* Adjusts position to be just below the navbar */
+    top: 80px;
     right: 10px;
-    width: 300px; /* Keeps some padding on both sides */
+    width: 300px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding-bottom: 20px;
   }
@@ -145,7 +137,6 @@ html {
   }
 }
 
-/* Main Content */
 .main {
   background-color: #e2bfd9;
   flex: 1;
@@ -193,7 +184,7 @@ html {
   }
 
   #main__img {
-    display: none; /* Ukrywa obraz na mniejszych ekranach */
+    display: none;
   }
 
   .main__content {
@@ -212,22 +203,20 @@ html {
   }
 
   .main__content ul {
-    list-style-type: none; /* Usuwa punktory */
+    list-style-type: none;
   }
 
   .main__content ul li {
     font-size: 1.2rem;
-    margin-bottom: 10px; /* Dodaje odstępy między elementami listy */
+    margin-bottom: 10px;
   }
 }
 
-/* Subpages */
 #fioletowy,
 #pers {
   background-color: #e2bfd9;
 }
 
-/* Contact & Appointment Forms */
 .form-intro,
 .kontakt-intro,
 .personel-intro,
@@ -249,7 +238,6 @@ html {
   font-size: 1.2rem;
 }
 
-/* Forms */
 form {
   background-color: #f7efe5;
   width: 40%;
@@ -322,7 +310,6 @@ input[type="submit"]:hover {
   }
 }
 
-/* Personnel Section */
 #pers {
   display: flex;
   flex-direction: column;
@@ -338,6 +325,12 @@ input[type="submit"]:hover {
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+@media screen and (max-width: 768px) {
+  .personel__container {
+    width: 100%;
+  }
 }
 
 .image-container {
@@ -372,7 +365,6 @@ input[type="submit"]:hover {
   }
 }
 
-/* Video */
 .video-container {
   display: flex;
   justify-content: center;
@@ -383,7 +375,6 @@ input[type="submit"]:hover {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Sticky Footer */
 .footer {
   background-color: #674188;
   text-align: center;
@@ -403,69 +394,3 @@ input[type="submit"]:hover {
     width: 100%;
   }
 }
-
-/* .image-personel {
-  max-width: 800px; 
-  margin: 0 auto; 
-  padding: 20px;
-}
-
-.image-container {
-  display: flex;
-  align-items: top;
-  justify-content: center; 
-  margin-bottom: 20px;
-}
-
-.image {
-  width: 250px; 
-  height: auto;
-  border-radius: 8px;
-  margin-right: 20px;
-}
-
-.description {
-  font-size: 1rem;
-  color: #674188;
-  max-width: 300px;
-}
-
-.video-container {
-  display: flex;
-  justify-content: center;
-  margin-top: 40px;
-  padding-bottom: 20px;
-}
-
-.video-container video {
-  border-radius: 8px;
-} */
-
-/* 
-.form-container {
-  max-width: 500px;
-  margin: 40px auto;
-  padding: 20px;
-  background-color: #f7efe5;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.form-container label {
-  display: block;
-  margin-bottom: 8px;
-  font-size: 1rem;
-  color: #674188;
-}
-
-.form-container input[type="text"],
-.form-container input[type="tel"] {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 20px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 1rem;
-  box-sizing: border-box;
-} 
-*/
