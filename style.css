@@ -305,9 +305,6 @@ input[type="submit"]:hover {
   .form-intro {
     width: 80%;
   }
-  .navbar__menu {
-    padding-top: 20px;
-  }
 }
 
 #pers {
